@@ -3,7 +3,7 @@
 export default function AboutIpo() {
   return (
     <section className="py-12">
-      <div className="max-w-screen-2xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-[#1E8C51] mb-4 text-left">
           About IPO
         </h2>

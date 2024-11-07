@@ -26,7 +26,7 @@ const data = [
 export default function InvestIpo() {
   return (
     <section className="py-12">
-      <div className="max-w-screen-2xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-black mb-4 text-left">
           Who can <span className="text-[#1E8C51]">invest in IPO?</span>
         </h2>

@@ -284,7 +284,7 @@ export default function IpoTabs() {
 
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-7xl mx-auto px-4">
         <div className="flex justify-center mb-4">
           {["Open & Upcoming", "Closed"].map((tab) => (
             <button

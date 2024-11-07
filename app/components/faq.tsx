@@ -50,7 +50,7 @@ export default function FAQSection () {
   };
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-4 py-16">
+    <div className="max-w-7xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">
           Frequently Asked Questions
