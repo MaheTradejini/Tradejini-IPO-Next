@@ -1,101 +1,110 @@
 import Image from "next/image";
+import image1 from "../public/assets/images/Laptop-Mockup2.webp";
+import mobile from "../public/assets/images/mobile2.webp";
+import customer from "../public/assets/images/customers.webp";
+import IpoTabs from "./components/Ipo";
+import AboutIpo from "./components/about";
+import InvestIpo from "./components/invest";
+// import TimelineSection from "./components/apply";
+import IPOStepsCard from "./components/applyIpo";
+import FAQSection from "./components/faq";
+import Footer from "./components/footer";
+// import ResponsiveIPOSteps from "./components/apply";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <div className="max-w-full bg-white container">
+        <section className="flex flex-col lg:flex-row w-full h-full min-h-[100vh] overflow-hidden pt-16 relative">
+          {/* Background Video */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 bg-blend-multiply">
+            <video
+              autoPlay
+              loop
+              muted
+              className="min-w-full min-h-full w-full h-full object-cover z-[-1] absolute top-0 left-0"
+            >
+              <source src="assets/images/video2_11.mp4" type="video/mp4" />
+            </video>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {/* Left Column */}
+
+          <div className="flex flex-col justify-center items-start p-8 md:p-16 w-full lg:w-1/2 z-10">
+            <h1 className="text-3xl md:text-6xl font-bold text-white mb-2">
+              Apply for
+            </h1>
+            <span className="text-3xl md:text-6xl font-bold text-[#06e298] mb-4">
+              Upcoming IPOs
+            </span>
+            {/* 045D37 */}
+            {/* <p className="text-lg text-gray-600 mb-6">
+            Start your journey with us today. Enter your mobile number to get
+            started.
+          </p> */}
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              alt=""
+              loading="lazy"
+              width="1000"
+              height="1000"
+              decoding="async"
+              data-nimg="1"
+              className="w-64"
+              src={customer}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <p className="text-sm text-white">
+              Open <span className="text-[#06e298] font-semibold">FREE</span>{" "}
+              demat Account in minutes!
+            </p>
+
+            <div className="flex flex-col md:flex-row items-start w-full gap-3">
+              <input
+                type="tel"
+                placeholder="+91 | Enter your mobile number"
+                className="w-[100%] md:w-[40%] p-3 mb-4 border rounded-lg border-black"
+              />
+              <button className="px-4 py-6 h-9 bg-[#075D6D] text-white font-semibold rounded-lg hover:bg-[#038f6b] transition duration-300 inline-flex items-center">
+                Start Trading
+              </button>
+            </div>
+          </div>
+
+          <div className="lg:w-1/2 relative flex md:items-start items-end pt-16 z-10">
+            <Image
+              src={image1} // Replace with your image path
+              alt="Descriptive Alt Text"
+              // layout="fill"
+              objectFit="contain"
+              width={3000}
+              height={3000}
+              className="translate-x-1/4 scale-[150%] hidden lg:block"
+            />
+
+            <Image
+              src={mobile}
+              alt="Descriptive Alt Text"
+              objectFit="contain"
+              width={3000}
+              height={3000}
+              className="w-full h-full mx-auto translate-y-2/4 scale-[180%] lg:hidden"
+            />
+          </div>
+        </section>
+
+        <IpoTabs />
+
+        <AboutIpo />
+
+        <InvestIpo />
+
+        {/* <ResponsiveIPOSteps /> */}
+
+        <IPOStepsCard />
+
+        <FAQSection />
+
+        <Footer />
+      </div>
+    </>
   );
 }
