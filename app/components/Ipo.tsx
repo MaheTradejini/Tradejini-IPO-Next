@@ -96,7 +96,7 @@ const data = {
 };
 
 // Mapping between tab labels and data keys
-const tabMapping = {
+const tabMapping: { [key in "Open & Upcoming" | "Closed"]: "Upcoming" | "closed" } = {
   "Open & Upcoming": "Upcoming",
   Closed: "closed",
 };
@@ -300,7 +300,7 @@ export default function IpoTabs() {
             </button>
           ))}
         </div>
-        {renderTable(tabMapping[activeTab])}
+        { renderTable(tabMapping[activeTab] as "Upcoming" | "closed") }
       </div>
     </section>
   );
