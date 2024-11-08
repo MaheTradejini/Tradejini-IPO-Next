@@ -52,10 +52,10 @@ export default function FAQSection () {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="lg:text-3xl text-2xl font-bold text-gray-900 mb-4">
           Frequently Asked Questions
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 lg:text-base text-sm">
           Questions on your mind? Don't worry we have the answers!
         </p>
       </div>
@@ -64,13 +64,13 @@ export default function FAQSection () {
         {faqData.map((faq) => (
           <div
             key={faq.id}
-            className="divide-y divide-slate-200 rounded-lg overflow-hidden"
+            className="divide-y divide-slate-200 rounded-lg overflow-hidden lg:text-base text-sm"
           >
             <button
               className="w-full text-left p-4 flex justify-between bg-white items-center transition-colors duration-200"
               onClick={() => toggleAccordion(faq.id)}
             >
-              <span className="text-gray-800 font-medium">{faq.question}</span>
+              <span className="text-gray-800 font-medium lg:text-base text-sm">{faq.question}</span>
               <ChevronDown
                 className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
                   openId === faq.id ? 'transform rotate-180' : ''
@@ -84,7 +84,7 @@ export default function FAQSection () {
               }`}
             >
               <div className="p-4 bg-gray-50 border-t border-gray-200">
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-600 lg:text-base text-sm">{faq.answer}</p>
               </div>
             </div>
           </div>

@@ -113,25 +113,25 @@ export default function IpoTabs() {
         <table className="min-w-full bg-white rounded-lg shadow-lg hidden md:table">
           <thead className="bg-blue-500 text-white">
             <tr>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Companies
               </th>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Open-Close
               </th>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Issue Size
               </th>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Price Range
               </th>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Min Bid
               </th>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Min Qnty
               </th>
-              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-md text-black font-bold uppercase tracking-wider">
+              <th className="px-6 py-3 bg-[#f5fbfb] text-left text-sm text-black font-bold uppercase tracking-wider">
                 Action
               </th>
             </tr>
@@ -140,7 +140,7 @@ export default function IpoTabs() {
             {data[ipoType].slice(0, displayedRecords).map((ipo, index) => (
               <tr
                 key={index}
-                className={`transition duration-300 ease-in-out transform ${
+                className={`transition duration-300 ease-in-out transform text-sm ${
                   index % 2 === 0 ? "bg-[#FAFAF9]" : "bg-[#F5FAEF]"
                 }`}
               >
@@ -152,7 +152,7 @@ export default function IpoTabs() {
                     height={50}
                     className="rounded-full"
                   />
-                  <span className="ml-4 text-gray-900">
+                  <span className="ml-4 text-base text-gray-900">
                     {ipo.company}
                     {ipo.sme && (
                       <span className="px-2 py-1 ml-2 rounded-full text-[#38B990] bg-white border border-[#38B990] text-sm font-medium">
@@ -161,7 +161,7 @@ export default function IpoTabs() {
                     )}
                   </span>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-900">
+                <td className="px-6 py-4 whitespace-nowrap  text-gray-900">
                   {ipo.openclose}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-gray-900">
@@ -271,7 +271,7 @@ export default function IpoTabs() {
         <div className="flex justify-center mt-4 md:hidden">
           {data[ipoType].length > displayedRecords && (
             <button
-              className="px-6 py-3 bg-[#38B990] text-white rounded-lg hover:bg-[#38B990] hover:text-white transition duration-300"
+              className="px-6 py-3 bg-[#38B990] text-white text-sm rounded-lg hover:bg-[#38B990] hover:text-white transition duration-300"
               onClick={() => setDisplayedRecords(displayedRecords + 3)}
             >
               Load More

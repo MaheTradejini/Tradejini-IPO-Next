@@ -24,17 +24,17 @@ export default function Home() {
               muted
               className="min-w-full min-h-full w-full h-full object-cover z-[-1] absolute top-0 left-0"
             >
-              <source src="assets/images/video2_11.mp4" type="video/mp4" />
+              <source src="assets/images/BG2.mp4" type="video/mp4" />
             </video>
           </div>
 
           {/* Left Column */}
 
           <div className="flex flex-col justify-center items-start p-8 md:p-16 w-full lg:w-1/2 z-10">
-            <h1 className="text-3xl md:text-6xl font-bold text-white mb-2">
+            <h1 className="text-3xl lg:text-6xl font-bold text-white mb-2">
               Apply for
             </h1>
-            <span className="text-3xl md:text-6xl font-bold text-[#06e298] mb-4">
+            <span className="text-3xl lg:text-6xl font-bold text-[#06e298] mb-4">
               Upcoming IPOs
             </span>
             {/* 045D37 */}

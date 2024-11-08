@@ -35,7 +35,7 @@ export default function Navbar() {
         </button>
 
         {/* Navigation Links */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 text-base">
           <li>
             <Link href="#" className="text-gray-800 hover:text-[#04ae87]">
               Home
@@ -78,10 +78,10 @@ export default function Navbar() {
             />
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           </div>
-          <button className="px-4 py-2 bg-white text-[#09C373] rounded-lg border border-[#09C373]">
+          <button className="px-4 py-2 bg-white text-[#09C373] text-base rounded-lg border border-[#09C373]">
           Login
           </button>
-          <button className="px-4 py-2 bg-custom-green-gradient text-white rounded-lg hover:bg-[#03a076]">
+          <button className="px-4 py-2 bg-custom-green-gradient text-white text-base rounded-lg hover:bg-[#03a076]">
           Open Account
           </button>
         </div>
@@ -131,7 +131,7 @@ export default function Navbar() {
                 <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
               </div>
               <button className="px-4 py-2 bg-[#04ae87] text-white rounded-lg hover:bg-[#03a076]">
-                Create an Account
+                Open Account
               </button>
             </div>
           </ul>
