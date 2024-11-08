@@ -192,7 +192,7 @@ export default function IpoTabs() {
         </table>
 
         {/* Load More Button (Desktop) */}
-        <div className="flex justify-center mt-4 hidden md:block">
+        <div className="flex justify-center text-center mt-4 hidden md:block">
           {data[ipoType].length > displayedRecords && (
             <button
               className="px-6 py-3 bg-[#38B990] text-white rounded-lg hover:bg-[#38B990] hover:text-white transition duration-300"
