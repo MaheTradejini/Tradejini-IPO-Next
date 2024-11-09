@@ -110,6 +110,7 @@ export default function IpoTabs() {
   const renderTable = (ipoType: keyof typeof data) => {
     return (
       <div className="overflow-x-auto">
+      
         <table className="min-w-full bg-white rounded-lg shadow-lg hidden md:table">
           <thead className="bg-blue-500 text-white">
             <tr>
@@ -284,7 +285,10 @@ export default function IpoTabs() {
 
   return (
     <section className="py-12">
-      <div className="container max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
+      <h1 className="lg:text-3xl text-2xl font-bold text-center mb-6">
+      Apply for Ongoing and Upcoming IPOs <span className="text-emerald-600">Easily with Tradejini</span>
+      </h1>
         <div className="flex justify-center mb-4">
           {["Open & Upcoming", "Closed"].map((tab) => (
             <button

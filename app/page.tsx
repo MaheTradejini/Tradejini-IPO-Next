@@ -2,20 +2,21 @@ import Image from "next/image";
 import image1 from "../public/assets/images/Laptop-Mockup2.webp";
 import mobile from "../public/assets/images/mobile2.webp";
 import customer from "../public/assets/images/customers.webp";
+import Active from "../public/assets/images/users.png";
+import star from "../public/assets/images/star.png"
 import IpoTabs from "./components/Ipo";
 import AboutIpo from "./components/about";
 import InvestIpo from "./components/invest";
 // import TimelineSection from "./components/apply";
 import IPOStepsCard from "./components/applyIpo";
 import FAQSection from "./components/faq";
-import Footer from "./components/footer";
 // import ResponsiveIPOSteps from "./components/apply";
 
 export default function Home() {
   return (
     <>
       <div className="max-w-full bg-white container">
-        <section className="flex flex-col lg:flex-row w-full h-full min-h-[100vh] overflow-hidden pt-16 relative">
+        <section className="flex flex-col lg:flex-row w-full h-full min-h-[100vh] overflow-hidden pt-16 relative py-12 px-4">
           {/* Background Video */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 bg-blend-multiply">
             <video
@@ -53,7 +54,7 @@ export default function Home() {
               src={customer}
             />
             <p className="text-sm text-white">
-              Open <span className="text-[#06e298] font-semibold">FREE</span>{" "}
+              Open your <span className="text-[#06e298] font-semibold">FREE</span>{" "}
               demat Account in minutes!
             </p>
 
@@ -66,6 +67,27 @@ export default function Home() {
               <button className="px-4 py-6 h-9 bg-[#075D6D] text-white font-semibold rounded-lg hover:bg-[#038f6b] transition duration-300 inline-flex items-center">
                 Start Trading
               </button>
+            </div>
+
+            <div className="flex flex-col max-md:divide-y-[0.6px] md:flex-row md:space-x-6 md:divide-x-[.7px]">
+              <div className="flex items-center gap-4 py-4 md:justify-center md:pr-3">
+                <div className="text-[#06e298] text-4xl font-semibold">
+                 <Image src={Active} alt="Active Users"  width={30} height={30} />
+                </div>
+                <div className="lg:text-base text-sm text-[#06e298] font-semibold">
+                 50K+ Active users
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 py-4 md:justify-center md:pl-6">
+                <div className="text-[#06e298] text-4xl font-semibold">
+                <Image src={star} alt="Star Ratings"  width={30} height={30}/>
+                </div>
+                <div className="lg:text-base text-sm text-[#06e298] font-semibold">
+                 4.8 Play Store Rating
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -102,8 +124,6 @@ export default function Home() {
         <IPOStepsCard />
 
         <FAQSection />
-
-        <Footer />
       </div>
     </>
   );

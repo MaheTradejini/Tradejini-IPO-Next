@@ -398,19 +398,19 @@ export default function IPOStepsCard() {
   return (
     <div className="max-w-7xl mx-auto p-6 py-12">
       <h1 className="lg:text-3xl text-2xl font-bold text-center mb-4">
-        Apply for Open IPOs in{" "}
+        Apply for IPOs in{" "}
         <span className="text-emerald-600">Just 3 Steps!</span>
       </h1>
 
       {isMobile ? <MobileView /> : <DesktopView />}
 
-      {isMobile && (
+      {/* {isMobile && ( */}
         <div className="mt-12 px-4 max-w-md mx-auto">
           <button className="w-full py-4 bg-emerald-500 text-white lg:text-base text-sm rounded-xl font-semibold hover:bg-emerald-600 transition-colors">
             Apply now
           </button>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 }

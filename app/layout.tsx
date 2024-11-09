@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import SmoothScroll from "./components/Smoothscroll";
 import { Poppins } from 'next/font/google';
+import Footer from "./components/footer";
 
 
 
@@ -44,6 +45,7 @@ export default function RootLayout({
         <SmoothScroll>
         <Navbar />
         {children}
+        <Footer />
         </SmoothScroll>
       </body>
      
