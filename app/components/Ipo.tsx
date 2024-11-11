@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ipo1 from "../../public/assets/images/ipo1.png";
 
 const data = {
@@ -178,9 +179,11 @@ export default function IpoTabs() {
                   {ipo.minQty}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
+                  <Link href={"/details"}>
                   <button className="px-4 py-2 bg-white text-[#38B990] rounded-lg hover:bg-white hover:text-[#38B990] border border-[#38B990] transition duration-300">
                     View More
                   </button>
+                  </Link>
                   {ipoType === "Upcoming" && (
                     <button className="ml-2 px-4 py-2 bg-[#38B990] text-white rounded-lg hover:bg-[#38B990] hover:text-white transition duration-300">
                       Apply
@@ -254,9 +257,11 @@ export default function IpoTabs() {
                   <div className="text-gray-900">{ipo.minQty}</div>
                 </div>
                 <div className="flex items-end">
+                <Link href={"/details"}>
                   <button className="px-4 py-2 bg-white text-[#38B990] border border-[#38B990] rounded-lg transition duration-300">
                     View More
                   </button>
+                  </Link>
                   {ipoType === "Upcoming" && (
                     <button className="ml-2 px-4 py-2 bg-[#38B990] text-white rounded-lg hover:bg-green-600 transition duration-300">
                       Apply

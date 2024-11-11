@@ -25,7 +25,7 @@ export default function Home() {
               muted
               className="min-w-full min-h-full w-full h-full object-cover z-[-1] absolute top-0 left-0"
             >
-              <source src="assets/images/BG2.mp4" type="video/mp4" />
+              <source src="assets/images/BG3.mp4" type="video/mp4" />
             </video>
           </div>
 

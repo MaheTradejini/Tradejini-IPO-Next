@@ -3,6 +3,7 @@ import Financials from "../components/chart";
 import HomePage from "../components/detailhero";
 import HomeDetailTab from "../components/detailtable";
 import IpoTimeLine from "../components/IpoTimeLine";
+import PointSection from "../components/PointSection";
 
 
 
@@ -19,6 +20,8 @@ export default function Home() {
             <AboutCompany />
 
             <Financials />
+
+            <PointSection />
       </div>
     </>
   );

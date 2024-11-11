@@ -3,8 +3,8 @@ import React from 'react';
 export default function AboutCompany() {
   return (
     <section className="container max-w-7xl mx-auto py-12 px-4">
-      <h2 className="text-2xl font-bold mb-4">About the Company</h2>
-      <div className="bg-white p-6 md:p-8 rounded-lg shadow-md text-gray-700">
+      <h2 className="md:text-xl text-base font-bold mb-4">About the Company</h2>
+      <div className="bg-white p-6 md:p-8 rounded-lg shadow-md text-gray-700 md:text-base text-sm">
         <p>
           Founded in 1989, Waaree Energies is engaged in solar panel manufacturing and providing complete solar EPC
           solutions, having commissioned 1+ GW of solar EPC projects. It has a wide range of innovative products,

@@ -15,8 +15,8 @@ export default function HomePage() {
 
         {/* Center Column: Waaree details */}
         <div className="flex flex-col items-center justify-center p-6">
-          <h2 className="text-xl font-bold mb-2 text-center sm:text-left">WAAREENER</h2>
-          <p className="text-gray-500 mb-4 text-center sm:text-left">Waaree Energies IPO</p>
+          <h2 className="md:text-xl lg:text-2xl text-base font-bold mb-2 text-center sm:text-left">WAAREENER</h2>
+          <p className="text-gray-500 mb-4 text-center sm:text-left md:text-base text-sm">Waaree Energies IPO</p>
           
           <div className="flex items-center justify-center sm:justify-start mb-4">
             Status:
@@ -24,9 +24,9 @@ export default function HomePage() {
               <span className="px-3 py-1 bg-green-100 text-green-500 rounded-full mr-2">
                 Open
               </span>
-              <span className="px-3 py-1 bg-red-100 text-red-500 rounded-full">
+              {/* <span className="px-3 py-1 bg-red-100 text-red-500 rounded-full">
                 Closed
-              </span>
+              </span> */}
             </div>
           </div>
      
@@ -34,7 +34,7 @@ export default function HomePage() {
 
         {/* Right Column: Sign-up section */}
         <div className="flex flex-col justify-center items-center sm:items-start p-6">
-          <h2 className="text-xl font-bold mb-4 text-center sm:text-left">New to Tradejini? Sign-up for free.</h2>
+          <h2 className="md:text-xl text-base font-bold mb-4 text-center sm:text-left">New to Tradejini? Sign-up for free.</h2>
           <div className="flex flex-col md:flex-row items-start w-full gap-3">
             <input
               type="text"

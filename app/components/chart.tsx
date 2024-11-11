@@ -47,8 +47,8 @@ const options = {
 export default function Financials() {
   return (
     <div className='container max-w-7xl mx-auto py-12 px-4'>
-    <h2 className="text-2xl font-bold mb-4">Financials of the Company</h2>
-      <p className='text-gray-500'>This chart shows the financial performance of the company over the last few years in terms of revenue and profit.</p>
+    <h2 className="md:text-xl text-base font-bold mb-4">Financials of the Company</h2>
+      <p className='text-gray-500 md:text-base text-sm'>This chart shows the financial performance of the company over the last few years in terms of revenue and profit.</p>
       <Bar data={data} options={options} />
     </div>
   );
