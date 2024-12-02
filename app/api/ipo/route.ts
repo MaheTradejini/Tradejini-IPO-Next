@@ -22,7 +22,7 @@ export async function GET(request: Request) {
     const referer = headersList.get("referer");
     const allowedOrigins = [
       "http://localhost:3000",
-      "https://your-production-domain.com",
+      "https://tradejini-ipo.vercel.app",
     ];
 
     if (
