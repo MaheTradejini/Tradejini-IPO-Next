@@ -11,7 +11,7 @@ export default function QRCodeScanner() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-[1%] right-[2%]">
+    <div className="fixed bottom-[1%] right-[1%]">
       <div
         className="relative"
         onMouseEnter={() => setIsHovered(true)}
@@ -25,7 +25,7 @@ export default function QRCodeScanner() {
           className="transition-transform duration-300 transform hover:scale-125 z-10"
         />
         {isHovered && (
-          <div className="absolute bottom-12 right-[-16] bg-white shadow-lg rounded-lg p-4 flex flex-col items-center w-48 transition-transform duration-300 transform scale-105">
+          <div className="absolute bottom-12 right-6 bg-white shadow-lg rounded-lg p-4 flex flex-col items-center w-48 transition-transform duration-300 transform scale-105">
             <div className="text-sm text-black font-semibold text-center mb-2">Scan to Download <br /> Tradejini App</div>
             <Image
               src={qrCodeImage}
