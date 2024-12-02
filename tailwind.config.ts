@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'Arial', 'Helvetica', 'sans-serif'],
+        sans: ['Satoshi', 'Poppins', 'sans-serif'],
       },
       backgroundImage: {
         "custom-green-gradient":

@@ -1,18 +1,23 @@
 import Image from "next/image";
 import image1 from "../public/assets/images/Laptop-Mockup2.webp";
 import mobile from "../public/assets/images/mobile2.webp";
-import customer from "../public/assets/images/customers.webp";
+import customer from "../public/assets/images/Customers1.webp";
 import Active from "../public/assets/images/users.png";
 import star from "../public/assets/images/star.png"
-import IpoTabs from "./components/Ipo";
+import IpoTabs from "./components/Ipos";
 import AboutIpo from "./components/about";
-import InvestIpo from "./components/invest";
+// import InvestIpo from "./components/invest";  
 // import TimelineSection from "./components/apply";
 import IPOStepsCard from "./components/applyIpo";
 import FAQSection from "./components/faq";
+import SavingsFeatures from "./components/Features";
 // import ResponsiveIPOSteps from "./components/apply";
 
-export default function Home() {
+
+
+
+export default async function Home() {
+ 
   return (
     <>
       <div className="max-w-full bg-white container">
@@ -25,7 +30,7 @@ export default function Home() {
               muted
               className="min-w-full min-h-full w-full h-full object-cover z-[-1] absolute top-0 left-0"
             >
-              <source src="assets/images/BG3.mp4" type="video/mp4" />
+              <source src="assets/images/BG5.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -53,7 +58,7 @@ export default function Home() {
               className="w-64"
               src={customer}
             />
-            <p className="text-sm text-white">
+            <p className="text-sm text-white mb-6">
               Open your <span className="text-[#06e298] font-semibold">FREE</span>{" "}
               demat Account in minutes!
             </p>
@@ -62,9 +67,16 @@ export default function Home() {
               <input
                 type="tel"
                 placeholder="+91 | Enter your mobile number"
-                className="w-[100%] md:w-[40%] p-3 mb-4 border rounded-lg border-black"
+                className="w-[100%] md:w-[45%] p-3 mb-4 border rounded-lg border-black
+                hover:border-[#38B990] 
+                    focus:border-[#38B990] 
+                    focus:outline-none 
+                    focus:ring-1 
+                    focus:ring-[#38B990] 
+                    transition-all 
+                    duration-200"
               />
-              <button className="px-4 py-6 h-9 bg-[#075D6D] text-white font-semibold rounded-lg hover:bg-[#038f6b] transition duration-300 inline-flex items-center">
+              <button className="px-4 py-6 h-9 text-white font-semibold rounded-lg inline-flex items-center overflow-hidden bg-sliding-gradient bg-300% animate-slideGradient">
                 Start Trading
               </button>
             </div>
@@ -99,7 +111,7 @@ export default function Home() {
               objectFit="contain"
               width={3000}
               height={3000}
-              className="translate-x-1/4 scale-[150%] hidden lg:block"
+              className="translate-x-1/6 scale-[150%] hidden lg:block"
             />
 
             <Image
@@ -115,13 +127,15 @@ export default function Home() {
 
         <IpoTabs />
 
-        <AboutIpo />
+        <AboutIpo  />
 
-        <InvestIpo />
+        {/* <InvestIpo  /> */}
+
+        <SavingsFeatures />
 
         {/* <ResponsiveIPOSteps /> */}
 
-        <IPOStepsCard />
+        <IPOStepsCard  />
 
         <FAQSection />
       </div>

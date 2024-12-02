@@ -78,12 +78,18 @@ export default function Navbar() {
             />
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           </div>
+          <Link href="https://cubeplus.tradejini.com/auth/login" target='_blank'>
           <button className="px-4 py-2 bg-white text-[#09C373] text-base rounded-lg border border-[#09C373]">
           Login
           </button>
+          </Link>
+        
+          <Link href="https://ekyc.tradejini.com/#/onboarding" target='_blank'>
           <button className="px-4 py-2 bg-custom-green-gradient text-white text-base rounded-lg hover:bg-[#03a076]">
           Open Account
           </button>
+          </Link>
+        
         </div>
       </nav>
 

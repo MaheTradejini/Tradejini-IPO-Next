@@ -10,7 +10,7 @@ export default function IpoTimeLine() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white">
       {/* IPO Timeline Section */}
       <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-md">
         <h2 className="md:text-xl text-base font-bold mb-2">IPO Timeline:</h2>

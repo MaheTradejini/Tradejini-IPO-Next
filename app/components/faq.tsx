@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import ReactMarkdown from 'react-markdown';
 
 interface FAQItem {
   id: number;
@@ -9,40 +10,92 @@ interface FAQItem {
   answer: string;
 }
 
-export default function FAQSection () {
+export default function FAQSection() {
   const [openId, setOpenId] = useState<number | null>(null);
 
   const faqData: FAQItem[] = [
     {
       id: 1,
-      question: "Are IPOs a good investment?",
-      answer: "IPOs can be good investment opportunities, but they come with both potential rewards and risks. They offer the chance to invest in companies early, potentially benefiting from initial growth. However, it's important to thoroughly research each IPO, understand the company's business model, financials, and growth prospects before investing."
+      question: "What is an IPO?",
+      answer:
+        "An IPO, or Initial Public Offering, is when a private company sells its shares to the public for the first time, allowing the company to raise capital and expand. It also gives the public a chance to invest in the company’s growth by purchasing shares listed on a stock exchange.",
     },
     {
       id: 2,
-      question: "What is the minimum amount required to invest in IPO?",
-      answer: "The minimum investment amount varies by IPO but typically ranges from ₹10,000 to ₹15,000. The exact amount depends on the lot size and price band set by the company. For retail investors, SEBI regulations ensure that a portion of shares is reserved for small investments."
+      question: "Why do companies launch IPOs?",
+      answer:
+        "Companies go public through IPOs to secure capital for growth, reduce debt, or enhance their financial position. An IPO boosts the company’s visibility and credibility, helps attract investors, and offers early investors a liquidity exit while providing long-term capital options.",
     },
     {
       id: 3,
-      question: "What are the benefits of investing in IPOs?",
-      answer: "Investing in IPOs offers several benefits including potential for listing gains, being an early investor in promising companies, transparent pricing, and regulated process. You also get the opportunity to be part of a company's growth story from its early public stages."
+      question: "Who is eligible to invest in an IPO?",
+      answer: `The following are eligible to invest in IPOs:
+
+* Residents of India
+* Non-Residents (NRI)
+* Qualified Institutional Buyers (QIBs)
+* Eligible Foreign Investors such as FPI (Foreign Portfolio Investor) and Foreign Institutional Investors (FII)
+* You must be at least 18 years old`,
     },
     {
       id: 4,
-      question: "What are the risks of investing in IPOs?",
-      answer: "IPO investments carry risks such as market volatility, limited company history, pricing uncertainty, and potential overvaluation. There's also the risk of lock-in periods and the possibility that the company might not perform as expected after listing."
+      question: "How do I apply for an IPO?",
+      answer: `Here's how to apply for an IPO:
+
+* **Open Demat and Trading Account:** Ensure you have an active account with Tradejini
+* **Select IPO:** Check the IPOs available on the platform
+* **Log In:** Access your Tradejini account online or via the mobile app
+* **Fill Details:** Enter the IPO details, like the number of shares and price range
+* **ASBA Application:** Use ASBA for the application and ensure sufficient funds in your linked bank account
+* **Submit:** Confirm your details and submit the application
+* **Track and Trade:** Monitor the allotment status and sell the shares once listed`,
     },
     {
       id: 5,
-      question: "How to apply for IPOs on Dhan?",
-      answer: "Applying for IPOs on Dhan is a simple process: 1) Open the Dhan app 2) Navigate to the IPO section 3) Select the IPO you want to invest in 4) Enter your bid details 5) Confirm your UPI ID 6) Authorize the payment through your UPI app"
+      question: "What documents are required to invest in an IPO?",
+      answer: `To apply for an IPO, you’ll need the following documents:
+      
+* **PAN Card:** For identity verification
+* **Demat and trading account::** Mandatory for holding and trading shares.
+* **Bank account linked for ASBA:** To block the application amount.
+* **Address Proof:** To confirm your residential address.
+* **KYC Documents:**  Additional documents may be needed depending on the IPO or your broker
+      `,
     },
     {
       id: 6,
-      question: "What are the charges associated for IPOs on Dhan?",
-      answer: "Dhan does not charge any fees for applying to IPOs through its platform. The only payment you make is for the shares you're applying for. However, standard regulatory charges and taxes may apply as per market rules."
-    }
+      question: "How is the price of an IPO determined?",
+      answer:
+        "The IPO price is determined either through a fixed price or book-building method. In a fixed-price offering, the price is pre-determined by the company, while in book-building, investors bid within a price range, and the final price is set based on demand.",
+    },
+
+    {
+      id: 7,
+      question: "Can I sell IPO shares on the listing day?",
+      answer:
+        "Yes, IPO shares can be sold once listed on the stock exchange.",
+    },
+
+    {
+      id: 8,
+      question: "What is oversubscription in an IPO?",
+      answer:
+        "Oversubscription happens when the demand for shares exceeds the available supply.",
+    },
+
+    {
+      id: 9,
+      question: "What happens if I don’t get an IPO allotment?",
+      answer:
+        "If you don’t get an allotment in an IPO, your application money will be refunded after the issue closes. This amount is credited back to your bank account linked to the ASBA application.",
+    },
+
+    {
+      id: 10,
+      question: "How can one decide on buying an IPO?",
+      answer:
+        "Investors should consider the company’s financial health, growth prospects, industry position, and management. Market conditions and investor demand also play a crucial role in evaluating the potential of an IPO. Understanding the price band and market sentiment is essential before making a decision.",
+    },
   ];
 
   const toggleAccordion = (id: number) => {
@@ -70,21 +123,36 @@ export default function FAQSection () {
               className="w-full text-left p-4 flex justify-between bg-white items-center transition-colors duration-200"
               onClick={() => toggleAccordion(faq.id)}
             >
-              <span className="text-gray-800 font-medium lg:text-base text-sm">{faq.question}</span>
+              <span className="text-gray-800 font-medium lg:text-base text-sm">
+                {faq.question}
+              </span>
               <ChevronDown
                 className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-                  openId === faq.id ? 'transform rotate-180' : ''
+                  openId === faq.id ? "transform rotate-180" : ""
                 }`}
               />
             </button>
-            
+
             <div
               className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                openId === faq.id ? 'max-h-96' : 'max-h-0'
+                openId === faq.id ? "max-h-96" : "max-h-0"
               }`}
             >
               <div className="p-4 bg-gray-50 border-t border-gray-200">
-                <p className="text-gray-600 lg:text-base text-sm">{faq.answer}</p>
+                <ReactMarkdown 
+                  className="text-gray-600 lg:text-base text-sm prose prose-ul:mt-2 prose-ul:list-none prose-li:my-1"
+                  components={{
+                    ul: ({children}) => <ul className="space-y-2">{children}</ul>,
+                    li: ({children}) => (
+                      <li className="flex items-start">
+                        <span className="font-bold mr-2">•</span>
+                        <span>{children}</span>
+                      </li>
+                    ),
+                  }}
+                >
+                  {faq.answer}
+                </ReactMarkdown>
               </div>
             </div>
           </div>
@@ -92,5 +160,4 @@ export default function FAQSection () {
       </div>
     </div>
   );
-};
-
+}

@@ -3,3 +3,86 @@
 @tailwind utilities;
 /* styles/globals.css */
 
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-slide-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .slide-title {
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    background: white;
+    z-index: 10;
+  }
+  
+
+  
+  /* Custom pagination bullet styles */
+  .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background: #d1d5db !important;
+    opacity: 0.5 !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: #059669 !important;
+  }
+  
+  /* Dynamic bullets specific styles */
+  .swiper-pagination-bullet-active-main {
+    background: #059669 !important;
+  }
+  
+  .swiper-pagination-bullet-active-prev,
+  .swiper-pagination-bullet-active-next {
+    opacity: 0.8 !important;
+  }
+
+  .animate-slideGradient {
+    position: relative;
+    background: linear-gradient(90deg, #09C373, #06884f, #045D37, #09C373);
+    background-size: 300% 100%;
+    animation: slideGradient 5s linear infinite;
+    animation-delay: 1s;
+  }
+  
+  @keyframes slideGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+
