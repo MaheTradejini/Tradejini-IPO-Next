@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import qrCodeImage from "../../public/assets/images/IPO-QR-New.png"; // Replace with your QR code image path
+import qrCodeImage from "../../public/assets/images/IPO-QR-New.png";
 import qrscan from "../../public/assets/images/scanlogo1.gif"
 
 
