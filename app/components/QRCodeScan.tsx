@@ -11,7 +11,7 @@ export default function QRCodeScanner() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-[1%] right-[1%]">
+    <div className="fixed bottom-[-12] right-[1%]">
       <div
         className="relative"
         onMouseEnter={() => setIsHovered(true)}
