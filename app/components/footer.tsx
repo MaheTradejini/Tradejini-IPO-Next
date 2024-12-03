@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import customer from "../../public/assets/images/customers.webp";
+
 
 export default function Footer() {
   return (
@@ -247,9 +246,9 @@ export default function Footer() {
         </div>
         <div className="mt-20 hidden place-items-center text-xs">
           <div className="flex flex-row items-center rounded-xl bg-[#231691] px-5 py-2 shadow-xl">
-            <div className="">
+            {/* <div className="">
               <Image src={customer} alt="" />
-            </div>
+            </div> */}
             <p className="ml-5 mr-4 font-bold text-white md:mr-20">
               Live Market insights only at...
             </p>

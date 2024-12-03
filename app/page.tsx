@@ -23,15 +23,8 @@ export default async function Home() {
       <div className="max-w-full bg-white container">
         <section className="flex flex-col lg:flex-row w-full h-full min-h-[100vh] overflow-hidden pt-16 relative py-12 px-4">
           {/* Background Video */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 bg-blend-multiply">
-            <video
-              autoPlay
-              loop
-              muted
-              className="min-w-full min-h-full w-full h-full object-cover z-[-1] absolute top-0 left-0"
-            >
-              <source src="assets/images/BG5.mp4" type="video/mp4" />
-            </video>
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 bg-blend-multiply" style={{ backgroundColor: '#000' }}>
+         
           </div>
 
           {/* Left Column */}
@@ -43,11 +36,7 @@ export default async function Home() {
             <span className="text-3xl lg:text-6xl font-bold text-[#06e298] mb-4">
               Upcoming IPOs
             </span>
-            {/* 045D37 */}
-            {/* <p className="text-lg text-gray-600 mb-6">
-            Start your journey with us today. Enter your mobile number to get
-            started.
-          </p> */}
+           
             <Image
               alt=""
               loading="lazy"
@@ -87,7 +76,7 @@ export default async function Home() {
                  <Image src={Active} alt="Active Users"  width={30} height={30} />
                 </div>
                 <div className="lg:text-base text-sm text-[#06e298] font-semibold">
-                 50K+ Active users
+                 10K+ Downloads
                 </div>
               </div>
 
@@ -96,7 +85,7 @@ export default async function Home() {
                 <Image src={star} alt="Star Ratings"  width={30} height={30}/>
                 </div>
                 <div className="lg:text-base text-sm text-[#06e298] font-semibold">
-                 4.8 Play Store Rating
+                 4.9 Play Store Rating
                 </div>
               </div>
 
@@ -107,7 +96,7 @@ export default async function Home() {
             <Image
               src={image1} // Replace with your image path
               alt="Descriptive Alt Text"
-              // layout="fill"
+              priority
               objectFit="contain"
               width={3000}
               height={3000}
@@ -120,7 +109,7 @@ export default async function Home() {
               objectFit="contain"
               width={3000}
               height={3000}
-              className="w-full h-full mx-auto translate-y-2/4 scale-[180%] lg:hidden"
+              className="w-full h-full mx-auto translate-y-1/6 scale-[180%] lg:hidden"
             />
           </div>
         </section>
