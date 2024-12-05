@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     const headersList = await headers();
     const referer = headersList.get("referer");
     const allowedOrigins = [
-      "http://localhost:3000",
+      "http://localhost:3001",
       "https://tradejini-ipo.vercel.app",
     ];
 

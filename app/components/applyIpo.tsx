@@ -9,6 +9,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 interface StepInfo {
   id: number;
@@ -154,9 +155,11 @@ export default function IPOStepsCard() {
       {isMobile ? <MobileView /> : <DesktopView />}
 
       <div className="mt-12 px-4 max-w-md mx-auto">
+        <Link href="http://cp.tradejini.com/ipo" target="_blank">
         <button className="w-full py-4 bg-emerald-500 text-white lg:text-base text-sm rounded-xl font-semibold hover:bg-emerald-600 transition-colors">
           Apply now
         </button>
+        </Link>
       </div>
     </div>
   );
