@@ -1,18 +1,18 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { rateLimit } from "@/lib/rate-limit"; // You'll need to create this
+import { rateLimit } from "@/lib/rate-limit";
 
 // Create a rate limiter
 const limiter = rateLimit({
-  interval: 60 * 1000, // 1 minute
-  uniqueTokenPerInterval: 1000, // Max 1000 users per interval
+  interval: 60 * 1000,
+  uniqueTokenPerInterval: 1000,
 });
 
 export async function GET(request: Request) {
   try {
-    // 1. Rate Limiting
+  
     try {
-      await limiter.check(100, "IPO_API_CACHE"); // 100 requests per minute
+      await limiter.check(100, "IPO_API_CACHE");
     } catch {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }

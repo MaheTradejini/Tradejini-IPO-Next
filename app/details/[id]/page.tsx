@@ -1,18 +1,14 @@
 "use client";
 
 // import AboutCompany from "../../components/aboutCompany";
-import Financials from "../../components/chart";
-// import HomePage from "../components/detailhero";
-// import HomeDetailTab from "../components/detailtable";
-// import IpoTimeLine from "../../components/IpoTimeLine";
-// import PointSection from "../../components/PointSection";
+// import Financials from "../../components/chart";
+
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { CheckCircle, Circle } from "lucide-react";
 import ProsConsCard from "../../components/ProsConsCard";
-import ipoimage from "../../../public/assets/images/IPO/ipo-image.png";
 import { ipoStaticContent } from "@/app/data/ipoStaticContent";
 
 interface IPODetails {
@@ -121,7 +117,7 @@ export default function Home() {
   if (!ipodetails) {
     return <div className="text-center font-bold mt-6 text-lg">IPO not found</div>;
   }
-  const { about, pros = [], cons = [] } = ipodetails;
+  const { src, about, pros = [], cons = [] } = ipodetails;
 
   // Add this helper function at the top of your file
   const formatCurrency = (value: string): string => {
@@ -157,12 +153,12 @@ export default function Home() {
       <div className="max-w-full max-w-7xl mx-auto bg-gray-50 py-12 px-4">
         <div className="max-w-7xl mx-auto bg-white shadow-md rounded-lg p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center">
               <Image
-                src={ipoimage}
-                alt={`${ipoDetails.name} Logo`}
-                width={80}
-                height={80}
+                src={src as unknown as string}
+                alt={`${ipoName} Image`}
+                width={100}
+                height={100}
                 className="rounded-full"
               />
             </div>
@@ -271,18 +267,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto flex justify-between items-center mt-8">
+        <div className="max-w-7xl mx-auto flex justify-between items-center mt-8 mb-8">
           <Link href="/">
             <button className="bg-gray-200 md:text-base text-sm hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded">
               View All IPOs
             </button>
           </Link>
-          <button className="bg-green-500 md:text-base text-sm hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+          {/* <button className="bg-green-500 md:text-base text-sm hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
             Download RHP
-          </button>
+          </button> */}
         </div>
 
-        <Financials />
+        {/* <Financials /> */}
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
           {/* IPO Timeline Section */}

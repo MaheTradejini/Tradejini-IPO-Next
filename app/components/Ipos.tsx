@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ipo1 from "../../public/assets/images/ipo1.png";
 import ApplyModal from "./ApplyModal";
+import { ipoStaticContent } from "../data/ipoStaticContent";
 
 // Define interfaces for type safety
 interface IPOData {
@@ -198,12 +199,13 @@ export default function IpoTabs() {
               >
                 <td className="px-6 py-4 whitespace-nowrap flex items-center">
                   <Image
-                    src={ipo.logo || ipo1}
+                    src={ipoStaticContent[ipo.name as keyof typeof ipoStaticContent]?.src || ipo1}
                     alt={`${ipo.name} Logo`}
                     width={50}
                     height={50}
                     className="rounded-full"
                   />
+                
                   <div className="ml-4 flex flex-col max-w-[400px]">
                     <Link href={`/details/${formatUrlName(ipo.name)}`}>
                       <span
@@ -286,7 +288,7 @@ export default function IpoTabs() {
             >
               <div className="flex items-center mb-2">
                 <Image
-                  src={ipo.logo || ipo1}
+                  src={ipoStaticContent[ipo.name as keyof typeof ipoStaticContent]?.src || ipo1}
                   alt={`${ipo.name} Logo`}
                   width={50}
                   height={50}
