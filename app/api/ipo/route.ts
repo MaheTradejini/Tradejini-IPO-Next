@@ -23,6 +23,7 @@ export async function GET(request: Request) {
     const allowedOrigins = [
       "http://localhost:3001",
       "https://tradejini-ipo.vercel.app",
+      
     ];
 
     if (
