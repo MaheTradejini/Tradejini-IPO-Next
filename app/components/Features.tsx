@@ -7,19 +7,19 @@ const features = [
     title: "Retail Investors:",
     description: "Individuals who wish to invest in IPOs.",
     image: "/assets/images/Invest/retail.png",
-    bgColor: "bg-red-50",
+    bgColor: "bg-red-100",
   },
   {
     title: "Qualified Institutional Buyers (QIBs):",
     description: "Typically institutional investors like banks, insurance companies, etc.",
     image: "/assets/images/Invest/qulaified.png",
-    bgColor: "bg-yellow-50",
+    bgColor: "bg-yellow-100",
   },
   {
     title: "High Net-Worth Individuals (HNIs):",
     description: "Investors with a high level of wealth who may apply for larger amounts of shares.",
     image: "/assets/images/Invest/high.png",
-    bgColor: "bg-purple-50",
+    bgColor: "bg-purple-100",
   }
 ];
 
@@ -28,19 +28,19 @@ const features1 = [
       title: "Minimum Age:",
       description: "Investors must be at least 18 years old.",
       image: "/assets/images/Invest/age.png",
-      bgColor: "bg-blue-50",
+      bgColor: "bg-blue-100",
     },
     {
       title: "Bank Account:",
       description: "A functional bank account with sufficient funds and internet banking capabilities.",
       image: "/assets/images/Invest/bank.png",
-      bgColor: "bg-green-50",
+      bgColor: "bg-green-100",
     },
     {
       title: "Demat Account:",
       description: "A Demat account with a registered Depository Participant (DP) to hold IPO shares.",
       image: "/assets/images/Invest/demat.png",
-      bgColor: "bg-orange-50",
+      bgColor: "bg-orange-100",
     }
   ];
 
@@ -49,13 +49,13 @@ const features2 = [
       title: "Trading Account:",
       description: "Trading account is necessary to sell the shares post-listing.",
       image: "/assets/images/Invest/trade.png",
-      bgColor: "bg-gray-50",
+      bgColor: "bg-lime-100",
     },
     {
       title: "PAN Card:",
       description: "A valid PAN is required for identification.",
       image: "/assets/images/Invest/pan1.png",
-      bgColor: "bg-teal-50",
+      bgColor: "bg-teal-100",
     },
   ];
 
