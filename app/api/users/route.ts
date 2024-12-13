@@ -6,7 +6,7 @@ export async function GET(request: Request) {
   const status = searchParams.get('status');
   
   try {
-    const response = await fetch(`https://api.tradejini.com/v2/ipo/list?status=${status}`, {
+    const response = await fetch(`https://guest-api.tradejini.com/ipo/list?status=${status}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

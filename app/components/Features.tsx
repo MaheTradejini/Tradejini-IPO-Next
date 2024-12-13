@@ -98,9 +98,13 @@ export default function SavingsFeatures() {
           ))}
         </div>
 
-        <p className="text-black lg:text-base text-sm leading-relaxed mb-8 mt-8">
+        <h2 className="lg:text-3xl text-2xl font-bold text-black mb-8 mt-8 text-left">
+        Key requirements for
+        {" "}<span className="text-[#1E8C51]">investors</span> include
+        </h2>
+        {/* <p className="text-black lg:text-base text-sm leading-relaxed mb-8 mt-8">
           Key requirements for investors include:
-        </p>
+        </p> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4 cursor-default">
           {features1.map((feature, index) => (

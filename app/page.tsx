@@ -20,7 +20,7 @@ export default async function Home() {
  
   return (
     <>
-      <div className="max-w-full bg-white container">
+      <div className="max-w-full bg-gray-50 container">
         <section className="flex flex-col lg:flex-row w-full h-full min-h-[100vh] overflow-hidden pt-16 relative py-12 px-4">
           {/* Background Video */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 bg-blend-multiply" style={{ backgroundColor: '#000' }}>
@@ -76,7 +76,7 @@ export default async function Home() {
                  <Image src={Active} alt="Active Users"  width={30} height={30} />
                 </div>
                 <div className="lg:text-base text-sm text-[#06e298] font-semibold">
-                 10K+ Downloads
+                 50K+ Downloads
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ export default async function Home() {
                 <Image src={star} alt="Star Ratings"  width={30} height={30}/>
                 </div>
                 <div className="lg:text-base text-sm text-[#06e298] font-semibold">
-                 4.9 Play Store Rating
+                 4.8 Play Store Rating
                 </div>
               </div>
 

@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   try {
   
     try {
-      await limiter.check(100, "IPO_API_CACHE");
+      await limiter.check(500, "IPO_API_CACHE");
     } catch {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     const headersList = await headers();
     const referer = headersList.get("referer");
     const allowedOrigins = [
-      "http://localhost:3001",
+      "http://localhost:3000",
       "https://tradejini-ipo.vercel.app",
       
     ];
@@ -49,10 +49,10 @@ export async function GET(request: Request) {
     // Determine which API to call based on parameters
     if (ipoId) {
       // Get specific IPO details
-      apiUrl = `https://api.tradejini.com/v2/ipo/details?id=${ipoId}`;
+      apiUrl = `https://guest-api.tradejini.com/ipo/details?id=${ipoId}`;
     } else if (status && ["open", "closed"].includes(status)) {
       // Get IPO list
-      apiUrl = `https://api.tradejini.com/v2/ipo/list?status=${status}`;
+      apiUrl = `https://guest-api.tradejini.com/ipo/list?status=${status}`;
     } else {
       clearTimeout(timeoutId);
       return NextResponse.json(

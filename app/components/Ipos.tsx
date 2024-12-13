@@ -161,7 +161,7 @@ export default function IpoTabs() {
     }
 
     return (
-      <div className="overflow-x-auto">
+      <div className="">
         {/* Desktop Table View */}
         <table className="min-w-full bg-white rounded-lg shadow-lg hidden md:table">
           <thead className="bg-blue-500 text-white">
@@ -198,34 +198,44 @@ export default function IpoTabs() {
                 }`}
               >
                 <td className="px-6 py-4 whitespace-nowrap flex items-center">
-                  <Image
-                    src={ipoStaticContent[ipo.name as keyof typeof ipoStaticContent]?.src || ipo1}
-                    alt={`${ipo.name} Logo`}
-                    width={50}
-                    height={50}
-                    className="rounded-full"
-                  />
-                
-                  <div className="ml-4 flex flex-col max-w-[400px]">
+                  <Link href={`/details/${formatUrlName(ipo.name)}`}>
+                    <Image
+                      src={
+                        ipoStaticContent[
+                          ipo.name as keyof typeof ipoStaticContent
+                        ]?.src || ipo1
+                      }
+                      alt={`${ipo.name} Logo`}
+                      width={50}
+                      height={50}
+                      className="rounded-full max-w-96"
+                    />
+                    </Link>
+                 
+
+                  <div className="ml-4 flex flex-col md:mr-6">
                     <Link href={`/details/${formatUrlName(ipo.name)}`}>
                       <span
-                        className="text-sm font-medium text-gray-900 truncate"
-                        title={ipo.name}
+                        className="text-sm font-medium text-gray-900 truncate hover:text-[#38B990]"
+                        title={ipo.symbol}
                       >
-                        {ipo.name}
+                        {ipo.symbol}{" "}
+                        {ipo.exchange && (
+                          <span className="px-1 py-0.2  text-[#38B990] bg-white border border-[#38B990] text-xs font-medium">
+                            {ipo.exchange}
+                          </span>
+                        )}{" "}
+                        {ipo.subType && (
+                          <span className="px-1 py-0.2  text-[#38B990] bg-white border border-[#38B990] text-xs font-medium">
+                            {ipo.subType}
+                          </span>
+                        )}
                       </span>
                     </Link>
                     <div className="flex flex-wrap gap-2 mt-1">
-                      {ipo.exchange && (
-                        <span className="px-2 py-1 rounded-full text-[#38B990] bg-white border border-[#38B990] text-xs font-medium">
-                          {ipo.exchange}
-                        </span>
-                      )}
-                      {ipo.subType && (
-                        <span className="px-2 py-1 rounded-full text-[#38B990] bg-white border border-[#38B990] text-xs font-medium">
-                          SME
-                        </span>
-                      )}
+                      <span className="text-xs font-medium text-gray-900 truncate">
+                        {ipo.name}
+                      </span>
                     </div>
                   </div>
                 </td>
@@ -288,7 +298,10 @@ export default function IpoTabs() {
             >
               <div className="flex items-center mb-2">
                 <Image
-                  src={ipoStaticContent[ipo.name as keyof typeof ipoStaticContent]?.src || ipo1}
+                  src={
+                    ipoStaticContent[ipo.name as keyof typeof ipoStaticContent]
+                      ?.src || ipo1
+                  }
                   alt={`${ipo.name} Logo`}
                   width={50}
                   height={50}

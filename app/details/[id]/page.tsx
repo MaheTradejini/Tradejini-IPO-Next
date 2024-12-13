@@ -6,7 +6,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { CheckCircle, Circle } from "lucide-react";
 import ProsConsCard from "../../components/ProsConsCard";
 import { ipoStaticContent } from "@/app/data/ipoStaticContent";
@@ -46,14 +46,11 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<string | null>(null);
 
-  
   type IPOStaticContentKeys = keyof typeof ipoStaticContent;
-
 
   useEffect(() => {
     if (!ipoName) return;
     const fetchIPODetails = async () => {
-      
       try {
         setIsLoading(true);
 
@@ -112,12 +109,14 @@ export default function Home() {
     );
   }
 
-  const ipodetails = ipoStaticContent[ipoName as IPOStaticContentKeys];
+  const ipodetails = ipoStaticContent[ipoName as IPOStaticContentKeys] as { src: StaticImageData; link: string; about: string; pros: string[]; cons: string[] };
 
   if (!ipodetails) {
-    return <div className="text-center font-bold mt-6 text-lg">IPO not found</div>;
+    return (
+      <div className="text-center font-bold mt-6 text-lg">IPO not found</div>
+    );
   }
-  const { src, about, pros = [], cons = [] } = ipodetails;
+  const { src, link, about, pros = [], cons = [] } = ipodetails;
 
   // Add this helper function at the top of your file
   const formatCurrency = (value: string): string => {
@@ -150,7 +149,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="max-w-full max-w-7xl mx-auto bg-gray-50 py-12 px-4">
+      <div className="max-w-full mx-auto bg-gray-50 py-12 px-4">
         <div className="max-w-7xl mx-auto bg-white shadow-md rounded-lg p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
             <div className="flex justify-center items-center">
@@ -185,25 +184,30 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <Link href="https://ekyc.tradejini.com/#/onboarding" target="_blank">
-              <button className="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 overflow-hidden bg-sliding-gradient bg-300% animate-slideGradient">
-                Apply Now
-              </button>
+              <Link
+                href="https://ekyc.tradejini.com/#/onboarding"
+                target="_blank"
+              >
+                <button className="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 overflow-hidden bg-sliding-gradient bg-300% animate-slideGradient">
+                  Apply Now
+                </button>
               </Link>
             </div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-gray-300 pt-4 mt-8">
             <div>
-              <p className="text-gray-500">Exchange</p>
+              <p className="text-gray-500 md:text-sm text-xs mb-4">Exchange</p>
               <p className="font-semibold">NSE</p>
             </div>
             <div>
-              <p className="text-gray-500">Min. Qty</p>
+              <p className="text-gray-500 md:text-sm text-xs mb-4">Min. Qty</p>
               <p className="font-semibold">34</p>
             </div>
             <div>
-              <p className="text-gray-500">Min. Bid Amount</p>
+              <p className="text-gray-500 md:text-sm text-xs mb-4">
+                Min. Bid Amount
+              </p>
               <p className="font-semibold">
                 {" "}
                 {`₹ ${(ipoDetails.minPrice * ipoDetails.lotSize).toLocaleString(
@@ -212,7 +216,9 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <p className="text-gray-500">Max. Investment</p>
+              <p className="text-gray-500 md:text-sm text-xs mb-4">
+                Max. Investment
+              </p>
               <p className="font-semibold">₹5,00,000</p>
             </div>
           </div>
@@ -223,7 +229,7 @@ export default function Home() {
             IPO Issue Details
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
             <div className="col-span-1">
               <h2 className="md:text-sm text-xs text-gray-700 mb-4">
                 IPO Date:
@@ -273,16 +279,18 @@ export default function Home() {
               View All IPOs
             </button>
           </Link>
-          {/* <button className="bg-green-500 md:text-base text-sm hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+          <Link href={link} target="_blank">
+          <button className="bg-green-500 md:text-base text-sm hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
             Download RHP
-          </button> */}
+          </button>
+          </Link>
         </div>
 
         {/* <Financials /> */}
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
           {/* IPO Timeline Section */}
-          <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-md bg-white">
+          <div className="p-4 md:p-6 rounded-lg shadow-md bg-white">
             <h2 className="md:text-xl text-base font-bold mb-2">
               IPO Timeline:
             </h2>
@@ -290,7 +298,7 @@ export default function Home() {
               For Guidance Only. Dates may be subject to change.
             </p>
             <div className="relative">
-              <div className="absolute left-4 md:left-5 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+              {/* <div className="absolute left-4 md:left-5 top-0 bottom-0 w-0.5 bg-gray-300"></div> */}
               {[
                 {
                   label: "IPO Offer Start",
@@ -322,6 +330,9 @@ export default function Home() {
                 },
               ].map((event, index) => (
                 <div key={index} className="flex items-center mb-6">
+                  {/* {index < arr.length - 1 && (
+                    <div className="absolute left-4 md:left-5 top-full h-[calc(100%-24px)] w-0.5 bg-gray-300"></div>
+                  )} */}
                   <div className="relative">
                     <div className="absolute left-4 md:left-5 transform -translate-x-1/2 -translate-y-1/2">
                       {isPastDate(event.date) ? (
